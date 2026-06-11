@@ -1,0 +1,97 @@
+.buscar-container {
+  min-height: 100vh;
+  background: #eefaf0;
+  padding: 40px;
+}
+
+.buscar-title {
+  text-align: center;
+  color: green;
+  margin-bottom: 30px;
+}
+
+.buscar-filtros {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+
+  max-width: 700px;
+  margin: auto;
+}
+
+@media (max-width: 600px) {
+  .buscar-filtros {
+    grid-template-columns: 1fr;
+  }
+}
+
+.buscar-input {
+  padding: 15px;
+
+  border-radius: 10px;
+
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #333;
+}
+
+.carona-card {
+  background: white;
+
+  max-width: 700px;
+
+  margin: 25px auto;
+
+  padding: 25px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.carona-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.carona-card:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.carona-card h3 {
+  color: green;
+  margin-bottom: 15px;
+}
+
+.carona-info {
+  margin-bottom: 8px;
+}
+
+.carona-button {
+  margin-top: 15px;
+
+  background: green;
+
+  color: white;
+
+  border: none;
+
+  padding: 12px 20px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.carona-button:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.carona-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}

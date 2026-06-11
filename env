@@ -1,0 +1,5 @@
+PORT=3000
+DB_FILENAME=./bigu_rural.sqlite
+GOOGLE_MAPS_API_KEY=sua_chave_da_google_cloud
+EMAIL_USER=email_para_testes
+EMAIL_PASS=senha_do_email

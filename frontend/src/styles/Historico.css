@@ -1,0 +1,68 @@
+.historico-container {
+  min-height: 100vh;
+  background: #eefaf0;
+  padding: 40px;
+}
+
+.historico-title {
+  text-align: center;
+  color: green;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.historico-card {
+  background: white;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.historico-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.historico-card:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.historico-rota {
+  color: green;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.historico-info {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.historico-status {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  background: #dff5e1;
+  color: green;
+  font-weight: bold;
+}
+
+/* Efeito para todos os botões dentro dos cards de histórico */
+.historico-card button {
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.historico-card button:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.historico-card button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}

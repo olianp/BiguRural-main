@@ -1,0 +1,52 @@
+.oferecer-container {
+  min-height: 100vh;
+  background: #eefaf0;
+  padding: 40px;
+}
+
+.oferecer-card {
+  background: white;
+  max-width: 700px;
+  margin: auto;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.oferecer-title {
+  text-align: center;
+  color: green;
+  margin-bottom: 30px;
+  font-size: 40px;
+}
+
+.oferecer-input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #333;
+}
+
+.oferecer-button {
+  width: 100%;
+  background: green;
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.oferecer-button:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.oferecer-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}

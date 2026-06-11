@@ -1,0 +1,72 @@
+.perfil-container {
+  min-height: 100vh;
+  background: #eefaf0;
+  padding: 40px;
+}
+
+.perfil-card {
+  background: white;
+  max-width: 700px;
+  margin: auto;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.perfil-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: green;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.perfil-nome {
+  color: green;
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+.perfil-info {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.perfil-button {
+  margin-top: 20px;
+  background: green;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-4px) scale(1.1); }
+}
+
+.icon-animated {
+  display: inline-block;
+  animation: floatIcon 2.5s infinite ease-in-out;
+}
+
+.btn-relatorio {
+  transition: box-shadow 0.3s ease, transform 0.1s ease;
+}
+
+.btn-relatorio:hover {
+  animation: floatIcon 1.2s infinite ease-in-out;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+.btn-relatorio:active {
+  animation: none; /* Pausa a animação de flutuar durante o clique */
+  transform: scale(0.95); /* Reduz levemente o tamanho para dar o efeito de afundar */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Deixa a sombra menor simulando aproximação do fundo */
+}
