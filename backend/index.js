@@ -18,7 +18,7 @@ app.use(express.json());
 const server = http.createServer(app); 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173", 
+    origin: "*", 
     methods: ["GET", "POST"]
   }
 });
@@ -28,7 +28,7 @@ io.on('connection', (socket) => {
   console.log(`Usuário conectado no Chat: ${socket.id}`);
 
   socket.on('entrar_sala', (carona_id) => {
-    socket.join(carona_id);
+    socket.join(String(carona_id));
   });
 
   socket.on('enviar_mensagem', async (data) => {
@@ -39,8 +39,12 @@ io.on('connection', (socket) => {
         `INSERT INTO mensagens (carona_id, remetente_id, remetente_nome, texto) VALUES (?, ?, ?, ?)`,
         [data.carona_id, data.remetente_id, data.remetente_nome, data.texto]
       );
+      
+      // Adiciona a hora atual na mensagem em tempo real
+      data.created_at = new Date().toISOString();
+      
       // Emite a mensagem para todos na sala (menos para quem enviou)
-      socket.to(data.carona_id).emit('receber_mensagem', data);
+      socket.to(String(data.carona_id)).emit('receber_mensagem', data);
     } catch (error) {
       console.error("Erro ao salvar mensagem no banco:", error);
     }
