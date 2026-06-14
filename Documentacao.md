@@ -37,18 +37,16 @@ O **Bigu Rural** é uma plataforma inteligente de caronas desenvolvida exclusiva
 - **REQ05**: Filtrar e sugerir caronas automaticamente com base na compatibilidade de rotas entre motorista e passageiro.
 - **REQ06**: Sugerir valores de contribuição baseados na distância e consumo médio do veículo.
 - **REQ07**: Atualizar automaticamente a disponibilidade do veículo conforme reservas são confirmadas.
-- **REQ08**: Compartilhar localização em tempo real durante as caronas.
 
 ### 3. Logística e Comunicação
-- **REQ09**: Sugerir as melhores rotas e pontos de encontro seguros dentro ou fora do campus.
-- **REQ10**: Permitir o agendamento antecipado de caronas para até 5 dias da semana.
-- **REQ11**: Chat interno para facilitar a comunicação entre os membros da carona sem a necessidade de expor números de telefone pessoais.
+- **REQ08**: Permitir o agendamento antecipado de caronas para até 5 dias da semana.
+- **REQ09**: Chat interno para facilitar a comunicação entre os membros da carona sem a necessidade de expor números de telefone pessoais.
 
 ### 4. Sustentabilidade e Governança
-- **REQ12**: Calcular a estimativa de redução de emissão de CO2 e disponibilizar para usuário após a finalização da carona.
-- **REQ13**: Arquivar automaticamente caronas após o início da viagem.
-- **REQ14**: Permitir que administradores bloqueiem usuários denunciados ou perfis não validados.
-- **REQ15**: Gerar relatórios sobre a eficiência do transporte compartilhado, mostrando a redução na geração de CO2 e confiabilidade dos usuários no sistema, em formato PDF e CSV.
+- **REQ10**: Calcular a estimativa de redução de emissão de CO2 e disponibilizar para usuário após a finalização da carona.
+- **REQ11**: Arquivar automaticamente caronas após o início da viagem.
+- **REQ12**: Permitir que administradores bloqueiem usuários denunciados ou perfis não validados.
+- **REQ13**: Gerar relatórios sobre a eficiência do transporte compartilhado, mostrando a redução na geração de CO2 e confiabilidade dos usuários no sistema, em formato PDF e CSV.
 
 ## Requisitos Não Funcionais
 - **RNF01**: O sistema deve possuir uma interface responsiva, garantindo uma navegação fluida em dispositivos móveis e desktops.

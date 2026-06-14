@@ -41,42 +41,32 @@ Este documento descreve os cenários de teste propostos para a validação dos r
 - **[Falha] Cenário 2:** O passageiro tenta reservar vaga em uma carona que já atingiu 0 vagas. O sistema bloqueia o clique ou a requisição e exibe "Vagas esgotadas".
 - **[Falha] Cenário 3:** O próprio motorista clica acidentalmente em "Solicitar Carona" na sua viagem. O sistema avisa "Você não pode solicitar vaga na sua própria carona".
 
-### REQ08: Compartilhar localização em tempo real
-- **[Sucesso] Cenário 1:** O motorista marca o "início" da viagem e a API externa carrega a rota atualizada no mapa para o passageiro acompanhar.
-- **[Falha] Cenário 2:** O usuário clica no link do mapa de uma carona que ele não confirmou ou que não tem acesso. O sistema nega a visualização da localização por segurança.
-- **[Falha] Cenário 3:** O dispositivo do motorista fica sem sinal de GPS no trajeto. O sistema mostra o "último local conhecido" sem "crashar" o frontend.
-
-### REQ09: Sugerir melhores rotas e pontos de encontro
-- **[Sucesso] Cenário 1:** O sistema sugere "Portaria Principal da UFRPE" como ponto comum baseado nas rotas mais utilizadas pelos alunos.
-- **[Falha] Cenário 2:** A origem ou destino não é reconhecida pela integração do mapa, não podendo gerar pontos de encontro automatizados.
-- **[Falha] Cenário 3:** O motorista tenta definir um ponto de encontro muito longe (fora do raio limite do campus) causando sobreaviso no app sobre a distância.
-
-### REQ10: Agendamento antecipado (até 5 dias)
+### REQ08: Agendamento antecipado (até 5 dias)
 - **[Sucesso] Cenário 1:** Na quinta-feira, o motorista agenda uma carona para a segunda-feira seguinte (dentro do limite). A carona é listada com sucesso no sistema.
 - **[Falha] Cenário 2:** O motorista tenta agendar uma carona para daqui a 15 dias. O sistema exibe "O limite máximo para agendamento é de 5 dias".
 - **[Falha] Cenário 3:** O motorista tenta agendar uma viagem cuja data é referente a um dia que já passou (ontem). O sistema bloqueia por data inválida.
 
-### REQ11: Chat interno
+### REQ09: Chat interno
 - **[Sucesso] Cenário 1:** Após a reserva, um botão de "Chat" é habilitado. O passageiro envia "Chego em 5 min" e o motorista recebe sem expor seu telefone pessoal.
 - **[Falha] Cenário 2:** Usuário tenta contatar um passageiro através de uma carona já encerrada há vários dias. O sistema exibe o chat apenas como "Leitura" (histórico) e bloqueia envio.
 - **[Falha] Cenário 3:** A conexão cai no momento de enviar a mensagem no chat. O sistema não envia o texto e avisa "Falha de conexão. Tente novamente".
 
-### REQ12: Redução de emissão de CO2
+### REQ10: Redução de emissão de CO2
 - **[Sucesso] Cenário 1:** O motorista clica em "Finalizar Viagem". A aplicação contabiliza os quilômetros rodados em grupo e informa na tela "A carona de vocês poupou X kg de CO2!".
 - **[Falha] Cenário 2:** A viagem foi criada e o passageiro reservou, mas o motorista a cancelou antes de iniciar. O cálculo de CO2 tenta rodar, mas é bloqueado porque o status é 'Cancelada'.
 - **[Falha] Cenário 3:** Houve um erro no algoritmo que gera o cálculo ou os KMs são dados inválidos, a API retorna um erro, o app captura sem travar e não contabiliza CO2 falso.
 
-### REQ13: Arquivar automaticamente caronas
+### REQ11: Arquivar automaticamente caronas
 - **[Sucesso] Cenário 1:** O horário definido para a carona expira. Na consulta do banco de dados, o status muda automaticamente para 'Concluída/Arquivada', removendo-a das buscas ativas.
 - **[Falha] Cenário 2:** O Job ou regra do servidor falha, e uma carona de ontem ainda aparece ativa nas buscas. O sistema precisa garantir uma trava temporal na view do Frontend para não deixá-la clicável.
 - **[Falha] Cenário 3:** Tenta-se arquivar uma carona cujo passageiro ainda está como "Pendente" ou "Em andamento". O arquivamento acusa status conflitante e resolve a pendência.
 
-### REQ14: Administradores bloqueiam usuários
+### REQ12: Administradores bloqueiam usuários
 - **[Sucesso] Cenário 1:** Administrador entra na ferramenta gerencial e bane o ID do usuário devido a múltiplas denúncias de má conduta.
 - **[Falha] Cenário 2:** Administrador acidentalmente tenta banir o próprio ID da sua sessão. O sistema o impede, alegando "Você não pode banir seu próprio usuário administrador".
 - **[Falha] Cenário 3:** Usuário que já foi banido tenta relogar. O sistema devolve "Sua conta foi desativada, procure a administração" em vez de logar o indivíduo.
 
-### REQ15: Gerar relatórios PDF e CSV
+### REQ13: Gerar relatórios PDF e CSV
 - **[Sucesso] Cenário 1:** O Administrador clica em "Baixar PDF". O script JS captura os dados das médias do motorista, anexa a logomarca via base64, e entrega um arquivo PDF perfeito.
 - **[Falha] Cenário 2:** O banco de dados está vazio (nenhuma carona/usuário no dia). Ao pedir o relatório CSV, ele apenas devolve a linha de cabeçalhos sem dar Crash no sistema.
 - **[Falha] Cenário 3:** Um usuário sem permissão de Administrador intercepta a rota de extração `/api/relatorio`. O backend bloqueia gerando HTTP 403 Forbidden.
